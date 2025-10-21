@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>upload files </title>
+    <style>
+        /* ------------------ التنسيق العام ------------------ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .upload-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* ------------------ تنسيق حقل الملف ------------------ */
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px 0; /* مسافة داخلية */
+            border: 1px solid #ccc; /* حدود بسيطة */
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        /* تنسيق زر اختيار الملفات الأصلي داخل الحقل */
+        input[type="file"]::file-selector-button {
+            /* تخصيص مظهر الزر الأصلي داخل حقل الملف */
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px; /* فصل الزر عن مسار الملف */
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ------------------ تنسيق زر الإرسال ------------------ */
+        input[type="submit"] {
+            background-color: #28a745; /* لون أخضر جذاب */
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1e7e34;
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.98); /* تأثير ضغطة بسيط */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="upload-container">
+        <h2>upload files</h2>
+        
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            
+            <input type="file" name="uploaded_file">
